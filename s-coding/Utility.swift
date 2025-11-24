@@ -40,3 +40,7 @@ public class ListNode {
         self.next = next
     }
 }
+
+public func p(_ items: Any..., separator: String = " ", terminator: String = "\n") {
+    print(items, separator: separator, terminator: terminator)
+}

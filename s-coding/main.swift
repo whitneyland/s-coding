@@ -7,6 +7,8 @@
 
 import Foundation
 
+let test = TwoSumRepeat()
+
 //twoSum_Test()
 //addTwoNumbers_Test()
-longestSub_Test()
+//longestSub_Test()
