@@ -55,12 +55,10 @@ struct VpnSessions {
 //            Range(start: 1, end: 4),
 //            Range(start: 2, end: 5),
 
-//            Range(start: 1, end: 9),
-//            Range(start: 2, end: 10),
-//            Range(start: 3, end: 8),
-//            Range(start: 4, end: 10),
-//            Range(start: 7, end: 16),
-//            Range(start: 8, end: 13),
+//            Range(start: 0, end: 5),
+//            Range(start: 0, end: 2),
+//            Range(start: 2, end: 5),
+//            Range(start: 4, end: 7),
         ]
 
         let max = 30
@@ -73,11 +71,11 @@ struct VpnSessions {
         }
 
 
-        sessions = sessions.sorted(by: { $0.start < $1.start })
+        sessions = sessions.sorted(by: { ($0.start, $0.end - $0.start) < ($1.start, $1.end - $1.start)  })
 
         let activity = getStatus(sessions: sessions)
 
-        let column = 9
+        let column = 11
         p("".appendAtColumn(column, String(repeating: "0123456789", count: 3)))
         p("Session ")
         for session in sessions {
@@ -144,6 +142,7 @@ struct VpnSessions {
             var session = sessions[index]
             var nextSession = sessions[index+1]
 
+            var index2 = index
             while session.end > nextSession.start {
                 concurrent += 1
 
@@ -153,12 +152,12 @@ struct VpnSessions {
 
                 count += 1
 
-                index += 1
-                if index >= sessions.count-1 {
+                index2 += 1
+                if index2 >= sessions.count-1 {
                     break
                 }
 
-                nextSession = sessions[index+1]
+                nextSession = sessions[index2+1]
             }
             activity.maxConcurrentSessions = max(concurrent,activity.maxConcurrentSessions)
 
