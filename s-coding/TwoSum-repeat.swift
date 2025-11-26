@@ -16,12 +16,27 @@ struct TwoSumRepeat {
         p()
 
         if let output = twoSum(nums: nums, target: target) {
-            p()
             p("answer: \(output)")
+        } else {
+            p("no answer found")
         }
     }
 
     func twoSum( nums: [Int], target: Int) -> [Int]? {
+        var numMap = [Int:Int]()
+
+        for (i, num) in nums.enumerated() {
+            let complement = target - num
+            if let index2 = numMap[complement] {
+                return [i, index2]
+            } else {
+                numMap[num] = i
+            }
+        }
+        return nil
+    }
+
+    func twoSum_Quadratic( nums: [Int], target: Int) -> [Int]? {
 
         for i in 0..<nums.count {
             for j in i..<nums.count {
