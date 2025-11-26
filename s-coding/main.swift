@@ -7,7 +7,7 @@
 
 import Foundation
 
-let test = TwoSumRepeat()
+let test = VpnSessions()
 
 //twoSum_Test()
 //addTwoNumbers_Test()
