@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		9B43A2AB2ED54CB9002D3397 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 9B43A2AA2ED54CB9002D3397 /* OrderedCollections */; };
+		9B43A2AD2ED54CD4002D3397 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 9B43A2AC2ED54CD4002D3397 /* Collections */; };
+		9B43A2AF2ED54CDF002D3397 /* HashTreeCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 9B43A2AE2ED54CDF002D3397 /* HashTreeCollections */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		9BAB155E2D95EE8600640249 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -35,16 +41,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B43A2AF2ED54CDF002D3397 /* HashTreeCollections in Frameworks */,
+				9B43A2AD2ED54CD4002D3397 /* Collections in Frameworks */,
+				9B43A2AB2ED54CB9002D3397 /* OrderedCollections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B43A2A92ED54CB9002D3397 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9BAB15572D95EE8600640249 = {
 			isa = PBXGroup;
 			children = (
 				9BAB15622D95EE8600640249 /* s-coding */,
+				9B43A2A92ED54CB9002D3397 /* Frameworks */,
 				9BAB15612D95EE8600640249 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,6 +94,9 @@
 			);
 			name = "s-coding";
 			packageProductDependencies = (
+				9B43A2AA2ED54CB9002D3397 /* OrderedCollections */,
+				9B43A2AC2ED54CD4002D3397 /* Collections */,
+				9B43A2AE2ED54CDF002D3397 /* HashTreeCollections */,
 			);
 			productName = "s-coding";
 			productReference = 9BAB15602D95EE8600640249 /* s-coding */;
@@ -106,6 +126,9 @@
 			);
 			mainGroup = 9BAB15572D95EE8600640249;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				9B43A2A82ED54AF3002D3397 /* XCRemoteSwiftPackageReference "swift-collections" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9BAB15612D95EE8600640249 /* Products */;
 			projectDirPath = "";
@@ -289,6 +312,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9B43A2A82ED54AF3002D3397 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9B43A2AA2ED54CB9002D3397 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B43A2A82ED54AF3002D3397 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
+		};
+		9B43A2AC2ED54CD4002D3397 /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B43A2A82ED54AF3002D3397 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		9B43A2AE2ED54CDF002D3397 /* HashTreeCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B43A2A82ED54AF3002D3397 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = HashTreeCollections;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9BAB15582D95EE8600640249 /* Project object */;
 }
