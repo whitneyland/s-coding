@@ -18,6 +18,11 @@ extension String {
         let stringIndex = self.index(self.startIndex, offsetBy: index)
         return self[stringIndex]
     }
+
+    func appendAtColumn(_ column: Int, _ s: String) -> String {
+        let padCount = max(0,column - self.count)
+        return self + String(repeating: " ", count: padCount) + s
+    }
 }
 
 // Definition for singly-linked list
